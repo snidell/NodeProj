@@ -1,0 +1,9 @@
+{
+  "name": "tm-500_reservation_system",
+  "version": "0.0.2",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "express": "^4.9.0",
+	"Q": "1.4.1"
+  }
+}

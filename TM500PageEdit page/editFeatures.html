@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Edit TM 500 Features</title> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- files created for calendar and POSTING to server-->
+  <script src="js/jQueryEditFeat.js"></script><!--file does /POST information-->
+  <!--custom styles made-->
+  <!-- Latest compiled and minified CSS from Boostrap webpage-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link REL="StyleSheet" TYPE="text/css" HREF="TM500Style.css">
+
+  <!--from nokia cloud -->
+  <link rel="stylesheet" href="boostrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="nokiaCloud/metro-bootstrap.min.css" />       
+  <link rel="stylesheet" href="nokiaCloud/main.css" />    
+  <!-- dependencies for Nokia logo color and nav bars-->
+  <script src="nokiaCloud/jquery-ui-1.10.3.custom.min.js"></script>
+  <script src="boostrap/js/bootstrap.min.js"></script>
+  <script src="nokiaCloud/metro.min.js"></script>
+  <script src="nokiaCloud/idangerous.swiper.min.js"></script> 
+  <link REL="StyleSheet" TYPE="text/css" HREF="TM500Style.css">
+
+  <!-- imports for qTip-->
+  <script type="text/javascript" src="js/qTip.min.js"></script>
+  <link href="css/qTip.min.css" rel="stylesheet" />
+  <!--Import for CKEditor-->  
+  <script src="ckeditor/ckeditor.js"></script>
+  <script type="text/javascript">
+  //When doc is loaded run jQuery/JS script
+  $(document).ready(DocumentReady);
+  </script>   
+
+</head>
+<!--structure of navbar-->
+<div id="container">
+<header id="top">
+    <a id="logo"  href="/"></a>
+    <a id="title" href="/">TM 500 Reservations</a>
+<nav id="menu" class="navbar navbar-default" role="navigation">
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">      
+        <li class="dropdown">
+            <a href="/Overview">View Reservations</a>            
+        </li>      
+        <li class="dropdown">
+            <a href="/Reserve">Create Reservation</a>             
+        </li>      
+        <li class="dropdown">
+            <a href="/editReservation" >Edit Reservations</a>            
+        </li>      
+        <li class="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                TM Manager
+            </a>
+            <ul class="dropdown-menu">                    
+                  <li><a href="/editFeatures">Edit Features</a></li>                    
+                  <li><a href="/manageUsers">Manage Users</a></li>                    
+            </ul>            
+        </li>      
+    </ul>
+  </div>
+</nav>
+</header>
+<body>
+  <h1>Nokia: Edit Features</h1>
+  <h4>Make changes to the current feature sets of the TM500 modules</h4>
+
+  <form id="textEditor">
+  <label id="TMLabel_Editor">Unit:--Select Unit to View Features--</label>
+  <div id="editorAlignment">
+    <div class="btn-group" role="group" aria-label="..." id="textButtons">
+
+  
+
+    <button class="btn btn-default dropdown-toggle" type="button" id="Tm_SelectDD" data-toggle="dropdown"                     aria-haspopup="true" aria-expanded="true">
+        Select TM
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><a href="#"id="TM1_Select">TM1</a></li>
+      <li><a href="#"id="TM2_Select">TM2</a></li>
+      <li><a href="#"id="TM3_Select">TM3</a></li>
+      <li><a href="#"id="TM4_Select">TM4</a></li>
+      <li><a href="#"id="TM5_Select">TM5</a></li>
+      <li><a href="#"id="TM6_Select">TM6</a></li>
+      <li><a href="#"id="TM7_Select">TM7</a></li>
+      <li><a href="#"id="TM8_Select">TM8</a></li>
+      <li><a href="#"id="TM9_Select">TM9</a></li>
+      <li><a href="#"id="TM10_Select">TM10</a></li>
+    </ul>  
+    </div>
+    <div id="textAreaPosition">
+      <textarea id="featureTA"wrap="hard">
+        <--Select TM to view Features
+      </textarea> 
+    </div>
+  <br />
+  <button type="button" class="btn btn-primary"id="Submit_Feature">Submit</button>
+  </div>
+
+</form> 
+<footer>
+</footer>
+
+<script type="text/javascript">                
+  CKEDITOR.replace( 'featureTA' );
+  CKEDITOR.config.height = 400;
+  CKEDITOR.config.width = 350;
+  var data = CKEDITOR.instances.featureTA.getData();
+  console.log("The Data is:"+data);
+</script>
+</body>
+</html>

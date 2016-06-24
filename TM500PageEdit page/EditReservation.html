@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+      <title>TM500 Reservation page</title>     
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />  
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+      <script src="js/jQueryImp.js"></script><!--file does GET/POST information-->
+        <!-- Latest compiled and minified CSS from Boostrap webpage-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+      <link href="css/redmond/jquery-ui-1.8.13.custom.css" rel="stylesheet" /> 
+      <!--style for jQuery-->
+      <!--from nokia cloud -->
+      <!--<link rel="stylesheet" href="nokiaCloud/bootstrap.min.css" />-->
+      <link rel="stylesheet" href="nokiaCloud/metro-bootstrap.min.css" />  
+      <link rel="stylesheet" href="nokiaCloud/main.css" /> 
+      
+      <script src="nokiaCloud/jquery-ui-1.10.3.custom.min.js"></script>
+      <script src="nokiaCloud/bootstrap.min.js"></script>
+      <script src="nokiaCloud/metro.min.js"></script>
+      <script src="nokiaCloud/idangerous.swiper.min.js"></script> 
+      <link REL="StyleSheet" TYPE="text/css" HREF="TM500Style.css"> 
+      <!-- imports for time picker-->
+      <script type="text/javascript" src="jquery.timepicker.js"></script>
+      <link rel="stylesheet" type="text/css" href="jquery.timepicker.css" />
+      <script type="text/javascript" src="lib/bootstrap-datepicker.js"></script>
+      <link rel="stylesheet" type="text/css" href="lib/bootstrap-datepicker.css" />
+      <!--<script type="text/javascript" src="lib/site.js"></script>-->
+      <!-- imports for qTip-->
+      <script type="text/javascript" src="js/qTip.min.js"></script>
+      <link href="css/qTip.min.css" rel="stylesheet" />
+
+
+</head>
+<!-- need for jQuery POST/GET front ned-->
+<script type="text/javascript">
+//When doc is loaded run jQuery/JS script
+$(document).ready(DocumentReady);
+</script>
+<body>
+<div id="container">
+<header id="top">
+    <a id="logo"  href="/"></a>
+    <a id="title" href="/">TM 500 Reservations</a>
+<nav id="menu" class="navbar navbar-default" role="navigation">
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      
+        <li class="dropdown">
+            <a href="/Overview">View Reservations</a>            
+        </li>
+      
+        <li class="dropdown">
+            <a href="/Reserve">Create Reservation</a>             
+        </li>
+      
+        <li class="dropdown">
+            <a href="/editReservation" >Edit Reservations</a>            
+        </li>
+      
+        <li class="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                TM Manager
+            </a>
+            <ul class="dropdown-menu">                    
+                        <li><a href="/editFeatures">Edit Features</a></li>                    
+                        <li><a href="/manageUsers">Manage Users</a></li>                    
+                </ul>            
+        </li>      
+    </ul>
+  </div>
+</nav>
+</header>
+<h1>Nokia: Edit Reservation</h1>
+<div align="center">
+<form class="form-inline">  
+  <label id="TM_Label">TM:</label>
+    <select class="form-control" id="SelectTM">
+      <option value="TM1">TM1</option>
+      <option value="TM2">TM2</option>
+      <option value="TM3">TM3</option>
+      <option value="TM4">TM4</option>
+      <option value="TM5">TM5</option>
+      <option value="TM6">TM6</option>
+      <option value="TM7">TM7</option>
+      <option value="TM8">TM8</option>
+      <option value="TM9">TM9</option>
+      <option value="TM10">TM10</option>
+  </select>
+  <div class="form-group"id="SearchReservation">
+        <label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+          <span class="input-group-addon">Reservation ID:</span>
+          <input type="text" class="form-control" id="ResID" placeholder="#" aria-describedby="inputError2Status">
+        </div>
+          <span class="" aria-hidden="true"id="glyphiStD1">
+          </span>
+           <span id="inputError2Status" class="sr-only">(error)</span>
+      </div>      
+      <button type="button" class="btn btn-primary"id="Search">
+        Search
+      </button>
+      
+
+  </form>
+
+
+
+
+</div>
+
+
+<fieldset class="fieldsets">  
+  <legend  align="center">Search Results</legend>
+  <div id="resultsDiv">  
+  <label> Name:</label>
+  <label id="SearchName" class="searchText"></label>
+  <label>Start Date:</label>
+  <label id="SearchStart"class="searchText"></label>
+  <label>EndDate:</label>
+  <label id="SearchEnd"class="searchText"></label>
+  <label>Telephone:</label>
+  <label id="SearchPhone"class="searchText"></label><br>
+  <label>Start Time:</label>
+  <label id="SearchStartTime"class="searchText"></label>
+  <label>End Time:</label>
+  <label id="SearchEndTime"class="searchText"></label>
+
+  <button type="button" class="btn btn-danger"id="Delete">
+    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+    Delete
+  </button>
+  <button type="button" class="btn btn-primary"id="Edit">
+    Edit
+  </button>
+  </div>
+  <label id="noResults"></label>
+
+</fieldset>
+
+<div id="editDetails">
+<div id="editFieldset">
+<fieldset class="fieldsets">  
+  <legend id= "legendText" align="center">Edit Details</legend> 
+    <form class="form-inline">  
+  <label id="user1Lbl">User:</label>
+    <select class="form-control" id="name1">
+    <option>----</option>
+  </select>
+  <div class="form-group"id="AddStartDate1">
+        <label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+          <span class="input-group-addon">Start Date:</span>
+          <input type="text" class="form-control" id="startDate1" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+          <span class="" aria-hidden="true"id="glyphiStD1">
+          </span>
+           <span id="inputError2Status" class="sr-only">(error)</span>
+      </div>
+
+      <div class="form-group"id="AddEndDate1">
+          <label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+          <span class="input-group-addon">End Date:</span>
+          <input type="text" class="form-control" id="endDate1" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+          <span class="" aria-hidden="true"id="glyphiEdD1">
+          </span>
+          <span id="inputError2Status" class="sr-only">(error)</span>
+      </div>
+
+      <button type="button" class="btn btn-primary"id="Update">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Submit
+      </button>
+
+  </form>
+  <form class="form-inline">
+    <label type="text">Start Time:</label>
+    <input type="text" id="startTime1"class="textboxes" data-scroll-default="6:00am">
+    <label type="text">End Time:</label>
+    <input type="text" id="endTime1" class="textboxes"data-scroll-default="6:00am">
+  </form>
+  <form class="form-inline">
+    <label id="error1"></label>
+  </form> 
+  <label id="error1"></label>  
+</fieldset>
+</div>
+</div>
+
+<script language="javascript">
+  resultsDiv.style.display="none"; 
+  editDetails.style.display="none"; 
+</script>
+
+<footer>
+
+</footer>
+<!-- activate picker scripts for date choice-->
+<script src="js/jquery-ui.js"></script>
+<script src="js/picker.js"></script>
+</body>
+</html>

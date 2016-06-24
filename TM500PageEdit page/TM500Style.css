@@ -1,0 +1,155 @@
+.fieldsets{ 
+	display: block;
+	border:1px solid blue ;
+  margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    padding-top: .0em;
+    padding-bottom: 5.0em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    height: 200px;
+    text-align: center;
+    color:#6B6B47;
+}
+
+legend {
+  padding: 0.1em 0.1em;
+  border:1px solid blue;
+  color:blue;
+  font-size:20px;
+  max-width: 225px;
+  text-align:center;
+}
+
+h1{
+  color: blue;
+  font: 20px/40px Arial, Helvetica, sans-serif; 
+}
+
+h3{
+  color: blue;
+  font: 20px/30px Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+h4{
+  font: 12px/20px Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+
+.textboxes{
+  width: 130px;
+}
+#title{
+  color: blue;
+  font: 20px/40px Arial, Helvetica, sans-serif;  
+}
+#calendar2,#calendar3,#calendar4,#calendar5,#calendar6,#calendar7,#calendar8,#calendar9,#calendar10{
+  margin-left: auto;
+  margin-right: auto;
+  width: 65%;
+
+}
+.myButton{
+  -webkit-border-radius: 27;
+  -moz-border-radius: 27;
+  border-radius: 27px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight:bold;
+  background: #476e9e;
+  padding: 6px 8px;
+  text-decoration: none;
+}
+
+.myButton:hover {
+  background: #9fb4f2;
+  text-decoration: none;
+  color:#ffffff;
+}
+
+.btnDelete{
+  -webkit-border-radius: 27;
+  -moz-border-radius: 27;
+  border-radius: 27px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight:bold;
+  background: #d91414;
+  padding: 6px 8px;
+  text-decoration: none;
+}
+
+.btnDelete:hover {
+  background: #ff0000;
+  text-decoration: none;
+  color:#ffffff;
+}
+.searchText{
+  font-weight:bold;
+  color: blue;
+}
+#featureTA{
+  padding:0px;
+  margin:0px;
+}
+
+#textEditor{
+  text-align: center;
+  position:relative;
+  vertical-align:top;
+  height:600px;
+  margin:0%;
+}
+#textAreaPosition{
+  display: inline-block;  
+  float:left;
+}
+
+#textButtons{ 
+  vertical-align:top;
+  display: inline-block;
+  float: left;
+  margin-left: 24%;
+  padding-top: 100px;
+  padding-right:53px;
+}
+#TMLabel_Editor{
+  display: block;  
+  padding: 4px;
+  float: left;
+  clear: both;
+  width: 100%;
+  padding-top:10px;
+}
+#Submit_Feature{
+  float:left;
+  margin-left:36%;
+}
+#userForm{
+  visibility:hidden;
+  padding-top:10px;
+}
+.form-inline {
+    padding-bottom:5px;/*override bootstrap txtboxes come too close*/
+}
+/*over rides bootstrap responsive behavior allows scroll bars*/
+#container{
+      width: 1250px !important;
+}
+
+.form-inline.form-control{
+  width:auto;
+}
+.form-inline .form-group{
+  display: inline-block;
+}
+
+
+    

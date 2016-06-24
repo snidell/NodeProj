@@ -1,0 +1,28 @@
+-Node.js
+install Node.js @: https://nodejs.org/download/
+chose windows installation
+
+-Dependencies
+Express: Used for middleware communication
+Body parser: parses JSON for middleware
+
+to install navigate to TM500 folder where the file: package.json is located.
+
+run the command npm install
+
+if an error occurs you maybe behind a corporate proxy and you need to provide a proxy to node to allow installing to proceed
+
+run the follow commands to resolve proxy (no password is required)
+
+npm config set proxy 10.52.63.124
+npm config set https-proxy 10.52.63.124
+
+once npm install has successfully ran
+
+navigate to the TM500 folder where the file server.js file is located and run:
+
+node server.js
+the server is now running on port 3000.
+
+you can navigate to the homepage of the TM500 reservation page by going to:   http://10.105.130.85:3000/
+

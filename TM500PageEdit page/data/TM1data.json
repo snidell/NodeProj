@@ -1,0 +1,19 @@
+[
+	{
+		"ResID": 287,
+		"name": "Scott Nidell",
+		"startDate": "2015-08-10T06:00:00.000Z",
+		"startMonth": 8,
+		"startDay": 10,
+		"startYear": 2015,
+		"startHour": 0,
+		"startMin": 0,
+		"endDate": "2015-08-14T05:59:00.000Z",
+		"endMonth": 8,
+		"endDay": 13,
+		"endYear": 2015,
+		"endHour": 23,
+		"endMin": 59,
+		"phone": "512-810-9750"
+	}
+]

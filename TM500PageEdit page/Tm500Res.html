@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+  		<title>TM500 Reservation page</title>     
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />  
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="js/jQueryImp.js"></script><!--file does GET/POST information-->
+        <link href="css/redmond/jquery-ui-1.8.13.custom.css" rel="stylesheet" /> <!--style for jQuery-->
+        
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  		<!-- Optional theme -->
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <!--from nokia cloud -->
+        <link rel="stylesheet" href="nokiaCloud/bootstrap.min.css" />
+        <link rel="stylesheet" href="nokiaCloud/metro-bootstrap.min.css" />       
+        <link rel="stylesheet" href="nokiaCloud/main.css" />    
+      
+        <script src="nokiaCloud/jquery-ui-1.10.3.custom.min.js"></script>
+        <script src="nokiaCloud/bootstrap.min.js"></script>
+        <script src="nokiaCloud/metro.min.js"></script>
+        <script src="nokiaCloud/idangerous.swiper.min.js"></script> 
+        <link REL="StyleSheet" TYPE="text/css" HREF="TM500Style.css"> 
+        <!-- imports for time picker-->
+        <script type="text/javascript" src="jquery.timepicker.js"></script>
+  		<link rel="stylesheet" type="text/css" href="jquery.timepicker.css" />
+  		<script type="text/javascript" src="lib/bootstrap-datepicker.js"></script>
+  		<link rel="stylesheet" type="text/css" href="lib/bootstrap-datepicker.css" />
+  		<!-- imports for qTip-->
+  		<script type="text/javascript" src="js/qTip.min.js"></script>
+  		<link href="css/qTip.min.css" rel="stylesheet"/>
+
+</head>
+<!-- need for jQuery POST/GET front ned-->
+<script type="text/javascript">
+//When doc is loaded run jQuery/JS script
+$(document).ready(DocumentReady);
+</script>
+<body>
+<div id="container">
+<header id="top">
+    <a id="logo"  href="/"></a>
+    <a id="title" href="/">TM 500 Reservations</a>
+<nav id="menu" class="navbar navbar-default" role="navigation">
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">      
+        <li class="dropdown">
+            <a href="/Overview">View Reservations</a>            
+        </li>
+      
+        <li class="dropdown">
+            <a href="/Reserve">Create Reservation</a>             
+        </li>
+      
+        <li class="dropdown">
+            <a href="/editReservation" >Edit Reservations</a>            
+        </li>
+      
+        <li class="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                TM Manager
+            </a>
+            <ul class="dropdown-menu">                    
+                        <li><a href="/editFeatures">Edit Features</a></li>                    
+                        <li><a href="/manageUsers">Manage Users</a></li>                    
+                </ul>            
+        </li>      
+    </ul>
+  </div>
+</nav>
+</header>
+<div id="container">
+<h1>Nokia: TM500 Create Reservation</h1>
+<fieldset class="fieldsets">
+	<legend align="center"  id="TM1Config">TM500--Unit 1: 10.105.130.55</legend>
+	
+	<form class="form-inline">	
+	<label id="user1Lbl">User:</label>
+    <select class="form-control" id="name1"style="width: 175px;">
+    <option>----</option>
+	</select>
+	<div class="form-group"id="AddStartDate1">
+        <label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">Start Date:</span>
+        	<input type="text" class="form-control" id="startDate1" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status"style="width: 175px;">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiStD1">
+        	</span>
+       		 <span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<div class="form-group"id="AddEndDate1">
+        	<label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">End Date:</span>
+        	<input type="text" class="form-control" id="endDate1" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status"style="width: 175px;">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiEdD1">
+        	</span>
+       	 	<span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<button type="button" class="btn btn-primary"id="submit1">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Submit
+    	</button>
+
+	</form>
+	<form class="form-inline">
+		<label type="text">Start Time:</label>
+		<input type="text" id="startTime1"class="textboxes" data-scroll-default="6:00am">
+		<label type="text">End Time:</label>
+		<input type="text" id="endTime1" class="textboxes"data-scroll-default="6:00am">
+	</form>
+	<form class="form-inline">
+		<label id="error1"></label>
+	</form>	
+</fieldset>
+
+<fieldset class="fieldsets">
+	<legend align="center"id="TM2Config">TM500--Unit 2: 10.105.130.56</legend>
+	<form class="form-inline">	
+	<label id="user2Lbl" >User:</label>
+    <select class="form-control" id="name2">   
+	</select>
+	<div class="form-group"id="AddStartDate2">
+        <label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">Start Date:</span>
+        	<input type="text" class="form-control" id="startDate2" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiStD2">
+        	</span>
+       		 <span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<div class="form-group"id="AddEndDate2">
+        	<label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">End Date:</span>
+        	<input type="text" class="form-control" id="endDate2" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiEdD2">
+        	</span>
+       	 	<span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<button type="button" class="btn btn-primary"id="submit2">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Submit
+    	</button>
+
+	</form>
+	<form class="form-inline">
+		<label type="text">Start Time:</label>
+		<input type="text" id="startTime2"class="textboxes" data-scroll-default="6:00am">
+		<label type="text">End Time:</label>
+		<input type="text" id="endTime2" class="textboxes"data-scroll-default="6:00am">
+	</form>
+	<form class="form-inline">
+		<label id="error2"></label>
+	</form>	
+</fieldset>
+
+<fieldset class="fieldsets" >
+	<legend align="center" id="TM3Config">TM500--Unit 3: 10.105.130.25</legend>
+	<form class="form-inline">	
+	<label id="user3Lbl" >User:</label>
+    <select class="form-control" id="name3">   
+	</select>
+	<div class="form-group"id="AddStartDate3">
+        <label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">Start Date:</span>
+        	<input type="text" class="form-control" id="startDate3" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiStD3">
+        	</span>
+       		 <span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<div class="form-group"id="AddEndDate3">
+        	<label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">End Date:</span>
+        	<input type="text" class="form-control" id="endDate3" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiEdD3">
+        	</span>
+       	 	<span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<button type="button" class="btn btn-primary"id="submit3">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Submit
+    	</button>
+	</form>
+	<form class="form-inline">
+		<label type="text">Start Time:</label>
+		<input type="text" id="startTime3"class="textboxes" data-scroll-default="6:00am">
+		<label type="text">End Time:</label>
+		<input type="text" id="endTime3" class="textboxes"data-scroll-default="6:00am">
+	</form>
+	<form class="form-inline">
+		<label id="error3"></label>
+	</form>	
+</fieldset>
+
+<fieldset class="fieldsets" >
+	<legend align="center"id="TM4Config">TM500--Unit 4 10.105.130.57</legend>
+	<form class="form-inline">	
+	<label id="user4Lbl">User:</label>
+    <select class="form-control" id="name4">   
+	</select>
+	<div class="form-group"id="AddStartDate4">
+        <label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">Start Date:</span>
+        	<input type="text" class="form-control" id="startDate4" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiStD4">
+        	</span>
+       		 <span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<div class="form-group"id="AddEndDate4">
+        	<label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">End Date:</span>
+        	<input type="text" class="form-control" id="endDate4" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiEdD4">
+        	</span>
+       	 	<span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<button type="button" class="btn btn-primary"id="submit4">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Submit
+    	</button>
+
+	</form>
+	<form class="form-inline">
+		<label type="text">Start Time:</label>
+		<input type="text" id="startTime4"class="textboxes" data-scroll-default="6:00am">
+		<label type="text">End Time:</label>
+		<input type="text" id="endTime4" class="textboxes"data-scroll-default="6:00am">
+		<label id="error1"></label>
+	</form>
+	<form class="form-inline">
+		<label id="error4"></label>
+	</form>	
+</fieldset>
+
+<fieldset class="fieldsets">
+	<legend align="center" id="TM5Config">TM500--Unit 5</legend>
+	<form class="form-inline">	
+	<label id="user5Lbl">User:</label>
+    <select class="form-control" id="name5">   
+	</select>
+	<div class="form-group"id="AddStartDate5">
+        <label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">Start Date:</span>
+        	<input type="text" class="form-control" id="startDate5" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiStD5">
+        	</span>
+       		 <span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<div class="form-group"id="AddEndDate5">
+        	<label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">End Date:</span>
+        	<input type="text" class="form-control" id="endDate5" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiEdD5">
+        	</span>
+       	 	<span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<button type="button" class="btn btn-primary"id="submit5">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Submit
+    	</button>
+
+	</form>
+	<form class="form-inline">
+		<label type="text">Start Time:</label>
+		<input type="text" id="startTime5"class="textboxes" data-scroll-default="6:00am">
+		<label type="text">End Time:</label>
+		<input type="text" id="endTime5" class="textboxes"data-scroll-default="6:00am">
+		<label id="error1"></label>
+	</form>
+	<form class="form-inline">
+		<label id="error5"></label>
+	</form>	
+</fieldset class="fieldsets"> 
+
+<fieldset class="fieldsets">
+	<legend align="center" id="TM6Config">TM500--Unit 6</legend>
+	<form class="form-inline">	
+	<label id="user6Lbl">User:</label>
+    <select class="form-control" id="name6">   
+	</select>
+	<div class="form-group"id="AddStartDate6">
+        <label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">Start Date:</span>
+        	<input type="text" class="form-control" id="startDate6" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiStD6">
+        	</span>
+       		 <span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<div class="form-group"id="AddEndDate6">
+        	<label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">End Date:</span>
+        	<input type="text" class="form-control" id="endDate6" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiEdD6">
+        	</span>
+       	 	<span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<button type="button" class="btn btn-primary"id="submit6">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Submit
+    	</button>
+
+	</form>
+	<form class="form-inline">
+		<label type="text">Start Time:</label>
+		<input type="text" id="startTime6"class="textboxes" data-scroll-default="6:00am">
+		<label type="text">End Time:</label>
+		<input type="text" id="endTime6" class="textboxes"data-scroll-default="6:00am">
+	</form>
+	<form class="form-inline">
+		<label id="error6"></label>
+	</form>	
+</fieldset class="fieldsets">
+<!-- Commented out will not be visable but still usable uncomment when a new TM server is implemented-->
+<!--
+<fieldset class="fieldsets">
+	<legend align="center" id="TM7Config">TM500--Unit 7</legend>
+	<form class="form-inline">	
+	<label id="user7Lbl">User:</label>
+    <select class="form-control" id="name7">   
+	</select>
+	<div class="form-group"id="AddStartDate7">
+        <label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">Start Date:</span>
+        	<input type="text" class="form-control" id="startDate7" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiStD7">
+        	</span>
+       		 <span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<div class="form-group"id="AddEndDate7">
+        	<label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">End Date:</span>
+        	<input type="text" class="form-control" id="endDate7" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiEdD7">
+        	</span>
+       	 	<span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<button type="button" class="btn btn-primary"id="submit7">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Submit
+    	</button>
+
+	</form>
+	<form class="form-inline">
+		<label type="text">Start Time:</label>
+		<input type="text" id="startTime7"class="textboxes" data-scroll-default="6:00am">
+		<label type="text">End Time:</label>
+		<input type="text" id="endTime7" class="textboxes"data-scroll-default="6:00am">
+	</form>
+	<form class="form-inline">
+		<label id="error7"></label>
+	</form>	
+</fieldset>
+
+<fieldset class="fieldsets" >
+	<legend align="center"id="TM8Config">TM500--Unit 8</legend>
+	<form class="form-inline">	
+	<label id="user8Lbl">User:</label>
+    <select class="form-control" id="name8">   
+	</select>
+	<div class="form-group"id="AddStartDate8">
+        <label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">Start Date:</span>
+        	<input type="text" class="form-control" id="startDate8" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiStD8">
+        	</span>
+       		 <span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<div class="form-group"id="AddEndDate8">
+        	<label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">End Date:</span>
+        	<input type="text" class="form-control" id="endDate8" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiEdD8">
+        	</span>
+       	 	<span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<button type="button" class="btn btn-primary"id="submit8">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Submit
+    	</button>
+
+	</form>
+	<form class="form-inline">
+		<label type="text">Start Time:</label>
+		<input type="text" id="startTime8"class="textboxes" data-scroll-default="6:00am">
+		<label type="text">End Time:</label>
+		<input type="text" id="endTime8" class="textboxes"data-scroll-default="6:00am">
+	</form>
+	<form class="form-inline">
+		<label id="error8"></label>
+	</form>	
+	<label id="error8"></label>
+</fieldset>
+
+<fieldset class="fieldsets" >
+	<legend align="center"id="TM9Config">TM500--Unit 9</legend>
+	<form class="form-inline">	
+	<label id="user9Lbl">User:</label>
+    <select class="form-control" id="name9">   
+	</select>
+	<div class="form-group"id="AddStartDate9">
+        <label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">Start Date:</span>
+        	<input type="text" class="form-control" id="startDate9" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiStD9">
+        	</span>
+       		 <span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<div class="form-group"id="AddEndDate9">
+        	<label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">End Date:</span>
+        	<input type="text" class="form-control" id="endDate9" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiEdD9">
+        	</span>
+       	 	<span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<button type="button" class="btn btn-primary"id="submit9">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Submit
+    	</button>
+
+	</form>
+	<form class="form-inline">
+		<label type="text">Start Time:</label>
+		<input type="text" id="startTime9"class="textboxes" data-scroll-default="6:00am">
+		<label type="text">End Time:</label>
+		<input type="text" id="endTime9" class="textboxes"data-scroll-default="6:00am">
+	</form>
+	<form class="form-inline">
+		<label id="error9"></label>
+	</form>	
+	<label id="error9"></label>
+</fieldset>
+
+<fieldset class="fieldsets" >
+	<legend align="center"id="TM10Config">TM500--Unit 10</legend>
+	<form class="form-inline">	
+	<label id="user10Lbl">User:</label>
+    <select class="form-control" id="name10">   
+	</select>
+	<div class="form-group"id="AddStartDate10">
+        <label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">Start Date:</span>
+        	<input type="text" class="form-control" id="startDate10" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiStD10">
+        	</span>
+       		 <span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<div class="form-group"id="AddEndDate10">
+        	<label class="control-label" for="inputError2"></label>
+        <div class="input-group">
+        	<span class="input-group-addon">End Date:</span>
+        	<input type="text" class="form-control" id="endDate10" placeholder="MM/DD/YYYY" aria-describedby="inputError2Status">
+        </div>
+        	<span class="" aria-hidden="true"id="glyphiEdD10">
+        	</span>
+       	 	<span id="inputError2Status" class="sr-only">(error)</span>
+    	</div>
+
+    	<button type="button" class="btn btn-primary"id="submit10">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Submit
+    	</button>
+
+	</form>
+	<form class="form-inline">
+		<label type="text">Start Time:</label>
+		<input type="text" id="startTime10"class="textboxes" data-scroll-default="6:00am">
+		<label type="text">End Time:</label>
+		<input type="text" id="endTime10" class="textboxes"data-scroll-default="6:00am">
+	</form>
+	<form class="form-inline">
+		<label id="error10"></label>
+	</form>
+</fieldset>-->
+</div>
+<footer>
+
+</footer>
+<!-- activate picker scripts for date choice-->
+<script src="js/jquery-ui.js"></script>
+<script src="js/picker.js"></script>
+</body>
+</html>
